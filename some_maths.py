@@ -30,7 +30,7 @@ def transpose(matrix):
     return result_matrix
 
 
-def matrix_multiplication(matrix1, matrix2):
+def matrix_multiplication(matrix2, matrix1):
     rows1 = len(matrix1)
     rows2 = len(matrix2)
     cols1 = len(matrix1[0])
