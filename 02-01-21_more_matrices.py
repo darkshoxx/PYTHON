@@ -29,7 +29,7 @@ def ols(x, y):
     print("projection dimensions")
     print(len(projection))
     print(len(projection[0]))
-    return some_maths.matrix_multiplication(covariance, some_maths.transpose(projection))
+    return some_maths.matrix_multiplication(covariance, projection)
 
 
-#print(ols(design_matrix, y_matrix))
+print(ols(design_matrix, y_matrix))

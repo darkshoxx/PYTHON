@@ -30,7 +30,7 @@ def transpose(matrix):
     return result_matrix
 
 
-def matrix_multiplication(matrix2, matrix1):
+def matrix_multiplication(matrix1, matrix2):
     rows1 = len(matrix1)
     rows2 = len(matrix2)
     cols1 = len(matrix1[0])
@@ -46,7 +46,7 @@ def matrix_multiplication(matrix2, matrix1):
             result_matrix[k][i] = 0
             for j in range(0, rows2):
                 result_matrix[k][i] = result_matrix[k][i] + matrix1[i][j]*matrix2[j][k]
-    return result_matrix
+    return transpose(result_matrix)
 
 
 epsi = pow(10, -10)
