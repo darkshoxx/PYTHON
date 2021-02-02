@@ -1,4 +1,4 @@
-import some_maths
+# import some_maths
 import numpy
 import scipy
 data_length = 10
@@ -12,7 +12,7 @@ design_matrix = numpy.transpose([intercept, var_x1, var_x2])
 y_matrix = numpy.transpose([val_y])
 
 # some_maths.matrix_multiplication(some_maths.transpose(design_matrix), y_matrix)
-#print(type(design_matrix))
+# print(type(design_matrix))
 
 
 def ols(x, y):
@@ -21,14 +21,13 @@ def ols(x, y):
     return numpy.matmul(covariance, projection)
 
 
-
-beta = ols(design_matrix, y_matrix)
-print([design_matrix[2]])
-print(type(numpy.mean(val_y) + 0))
-print(some_maths.matrix_multiplication(some_maths.transpose(beta), some_maths.transpose([design_matrix[2]])))
-print(numpy.matmul(some_maths.transpose(beta), some_maths.transpose([design_matrix[2]])))
-print(numpy.matmul(numpy.transpose(beta), numpy.transpose([design_matrix[2]])))
-print([y_matrix[1]] - numpy.matmul(numpy.transpose(beta), numpy.transpose([design_matrix[2]])))
+test_beta = ols(design_matrix, y_matrix)
+# print([design_matrix[2]])
+# print(type(numpy.mean(val_y) + 0))
+# print(some_maths.matrix_multiplication(some_maths.transpose(beta), some_maths.transpose([design_matrix[2]])))
+# print(numpy.matmul(some_maths.transpose(beta), some_maths.transpose([design_matrix[2]])))
+# print(numpy.matmul(numpy.transpose(beta), numpy.transpose([design_matrix[2]])))
+# print([y_matrix[1]] - numpy.matmul(numpy.transpose(beta), numpy.transpose([design_matrix[2]])))
 
 
 def statistics(x, y):
@@ -42,16 +41,17 @@ def statistics(x, y):
     for i in range(0, data_length):
         sum_squares_residual += pow(y[i] - numpy.matmul(numpy.transpose(beta), numpy.transpose([x[i]])), 2)
         sum_squares_total += pow(y[i] - y_hat, 2)
-        sum_squares_corrected += pow(numpy.matmul(numpy.transpose(beta), numpy.transpose([x[i]])) - y_hat,2)
+        sum_squares_corrected += pow(numpy.matmul(numpy.transpose(beta), numpy.transpose([x[i]])) - y_hat, 2)
     coef_of_det = 1 - sum_squares_residual/sum_squares_total
     helpful_fraction = (sample_size - 1)/(sample_size - predictors - 1)
     adj_coef_det = 1 - ((1 - coef_of_det) * helpful_fraction)
     model_degrees_freedom = predictors - 1                      # df1
     error_degrees_freedom = sample_size - predictors            # df2
-    mean_square_model = sum_squares_corrected / (model_degrees_freedom)
-    mean_square_error = sum_squares_residual / (error_degrees_freedom)
-    F_statistic = mean_square_model / mean_square_error         # following a F(p-1,n-p)
-    p_value_F_test = 1 - scipy.stats.f.cdf(F_statistic, model_degrees_freedom, error_degrees_freedom)
-    return [coef_of_det, adj_coef_det, p_value_F_test] #[coef_of_det]
+    mean_square_model = sum_squares_corrected / model_degrees_freedom
+    mean_square_error = sum_squares_residual / error_degrees_freedom
+    f_statistic = mean_square_model / mean_square_error         # following a F(p-1,n-p)
+    p_value_f_test = 1 - scipy.stats.f.cdf(f_statistic, model_degrees_freedom, error_degrees_freedom)
+    return [coef_of_det, adj_coef_det, p_value_f_test]  # [coef_of_det]
+
 
 print(statistics(design_matrix, y_matrix))
