@@ -1,6 +1,6 @@
 print("Mary had a little lamb.")  # Printing a string
 print("Its fleece was white as {}.".format('snow'))  # Making a string, formatting it, then printing
-print("And everywhere that Mary went.")  # Printing a string
+print(f"And everywhere that Mary went.")  # Printing a string
 print("." * 10)  # what'd that do?   # making 10 copies of that string in sequence in a string, then printing it
 
 end1 = "C"  # Saving a letter as a string in a variable
