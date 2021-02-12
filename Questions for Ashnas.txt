@@ -1,3 +1,4 @@
 Chapter 4 Study drills Question 1/2 ?????
 If I want to put all the exercises in a new subfolder, how do I do that?
 Sometimes packages are loaded automatically, sometimes I get an error.
+Chapter 10 Study Drill QUestion 2.2
