@@ -3,3 +3,4 @@ If I want to put all the exercises in a new subfolder, how do I do that?
 Sometimes packages are loaded automatically, sometimes I get an error.
 Chapter 10 Study Drill Question 2.2
 Chapter 20 Why do we not close the file?
+Chapter 23 Why do we not close the file?
