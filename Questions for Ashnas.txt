@@ -6,3 +6,4 @@ Chapter 20 Why do we not close the file?
 Chapter 23 Why do we not close the file?
 Chapter 24 What is the difference between formula, *formula, and the list. Why does formatting(formula) not work?
 Chapter 25 Why do string in function go brrrrrrrrrt?
+Chapter 32 (how) can a range have a count larger than 1? ANSWER: count is for all "sequences", range is a "sequence" object
