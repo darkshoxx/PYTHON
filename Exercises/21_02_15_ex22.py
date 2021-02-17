@@ -53,3 +53,6 @@
 # : # colon, at end of certain structures, followed by a line break and an indent.
 # readline # readline, reads everything from the pointer to the next linebreak.
 # += # plus-equal/increment, increments the object on the left by the number on the right.
+# == # equals, Boolean Comparison. Compares lists as objects, not componentwise
+# != # not equal, see truth table
+# and, or, no # (...) logical operators, see TT
