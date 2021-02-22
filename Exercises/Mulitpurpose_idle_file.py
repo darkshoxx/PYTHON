@@ -36,5 +36,20 @@ class RightPyramid(Square, Triangle):
         return 0.5 * perimeter * self.slant_height + base_area
 
 
-pyr = RightPyramid(1, 1)
-print(pyr.area())
+class Map(object):
+
+    shapes = {
+        'rectangle': Rectangle(1, 1),
+        'square': Square(1),
+    }
+
+    #def __init__(self, shape):
+    #    self.shape = shape
+
+    def some_shape(self, shape_name):
+        val = Map.shapes.get(shape_name)
+        return val
+
+Tennis = Map()
+
+print(Tennis.some_shape(shape_name='square'))
